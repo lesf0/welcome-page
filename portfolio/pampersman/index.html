@@ -1,0 +1,855 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<title>Pampersman - Доставка подгузников 24 часа</title>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/master.css">
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyCEu9Ob2a_pNPDYCNwRyXBN8lPh3_TCQWE"></script>
+<script type="text/javascript" src="assets/js/master.min.js"></script></head><body><input type="checkbox" id="show_menu" class="nodisplay"><div class="body"><div class="wrapper"><div class="block bgSkyBlue head-block onmiddle" id="block0"><div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+<div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+<div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+<div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+<div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+<div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+<div class="head-cloud absolute left icon cF lh-100-pc onbottom"><span class="inblock">☁</span></div>
+
+<div class="content h-795 ontop">
+	<div class="p-t-30 clear">
+		<a href="index.html" class="inblock pull-left w-255 border-box brd-r-1">
+			<img src="assets/img/head/logo.png" alt="Pampers Man" class="w-100-pc">
+		</a>
+
+		<label for="show_menu" class="menu_label inblock pull-right w-70 relative ontop border-box brd-r-2 m-t-30 brd-t-4 brd-b-4">
+			<img src="assets/img/head/menu_back.svg" class="menu_label_back absolute left top w-100-pc onbottom pointer-none">
+			<div class="menu_label_front relative trans-300 pointer-none">
+				<img src="assets/img/head/menu_front.svg" class="w-100-pc">
+				<div class="menu_label_stripes absolute right top w-25 h-5 m-r-25 m-t-35 bgF rounded trans-300"></div>
+			</div>
+		</label>
+
+		<div class="pull-right m-r-30 m-t-35 p-r-4 p-t-3 text-right">
+			<p>
+				<a href="tel:+79523292470" class="agcooper f-38 cF lh-100-pc">+7&thinsp;(952)&thinsp;329-24-70</a>
+			</p>
+			<p>
+				<label for="footer_callback_show" class="bold f-20 lh-100-pc cCyanBlue inblock brd-b-2 brdCyanBlue">Заказать бесплатный звонок</label>
+			</p>
+		</div>
+	</div>
+
+	<div class="clear m-t-70">
+		<div class="pull-left w-380 border-box brd-r-2 rtl">
+			<img src="assets/img/head/pampersman.png" class="head-pampersman w-390 border-box brd-l-4">
+		</div>
+
+		<div class="pull-right w-775 border-box brd-l-2 p-t-5 f-28 cF">
+			<h1 class="head-3d-text testo f-82 normal cCyanBlue upper lh-100-pc m-b-20 brd-b-3">Памперс Мен - </h1>
+			<h2 class="head-3d-text-small testo f-44 normal upper lh-63 m-b-35">Подгузники с бесплатной доставкой в Перми!</h2>
+			<p>Настоящий супергерой в глазах малышей!</p>
+			<p>Накопительная скидка до 5%</p>
+		</div>
+	</div>
+
+	<div class="cF w-865 m-a-auto m-t-55 text-justify-hack">
+		<a href="index.html#goods" class="head-button head-button-yellow bgBtnYellow inblock relative ontop w-380 h-75 rounded text-center valign-middle-hack f-28 bold upper trans-700">Заказать на сайте<span class="icon inblock f-34 m-l-20">💻</span></a>
+
+		<label for="footer_callback_show" class="head-button head-button-red bgBtnRed inblock relative ontop w-430 h-75 rounded text-center valign-middle-hack f-28 bold upper trans-700">Заказать по телефону<span class="icon inblock f-27 brd-b-7 m-l-20">📞</span></label>
+	</div>
+</div></div><div class="block goods-block " id="block1"><div class="goods-block-bg absolute left right top bottom"></div>
+
+<form action="http://ppman.lc/ajax" id="calcForm" method="POST" class="content goods-form cLightBlue">
+	<input type="hidden" name="action" value="order">
+	<input type="hidden" id="inputPrName" name="data[productName]">
+	<input type="hidden" id="inputPrId" name="data[productId]">
+	<h2 id="goods" class="testo f-54 normal upper cBlue p-t-100 brd-t-3 p-b-50 text-center">Выберите марку подгузников</h2>
+
+	<input type="radio" name="data[type]" id="calc_type_1" value="Pampers" class="nodisplay">
+	<input type="radio" name="data[type]" id="calc_type_2" value="Moony" class="nodisplay">
+	<input type="radio" name="data[type]" id="calc_type_3" value="Merries" class="nodisplay">
+	<input type="radio" name="data[type]" id="calc_type_4" value="Goon" class="nodisplay">
+	
+	<div class="text-justify-hack valign-middle relative onmiddle cBlue">
+		<div class="w-1140 h-160 text-center m-a-auto">
+<label onclick="dwnlManufacturer(1)" for="calc_type_1" class="w-270 h-100-pc inblock relative">
+				<img class="pointer-auto w-160 opac-100 trans-300" style="margin: 0 auto; display: block;" src="assets/img/goods/producers/1.png" alt=""><br>
+				<div class="text-center absolute bottom w-100-pc">
+				<span class="goods-cb inblock w-35 h-35 bgBlue cF border-box brd-a-3 brdBlue rounded-10 m-l-15 icon f-14 valign-middle-icon l-h-1 trans-300 text-center">✓</span>
+				</div>
+			</label><label onclick="dwnlManufacturer(2)" for="calc_type_2" class="w-270 h-100-pc inblock relative">
+				<img class="pointer-auto w-160 opac-100 trans-300" style="margin: 0 auto; display: block;" src="assets/img/goods/producers/2.png" alt=""><br>
+				<div class="text-center absolute bottom w-100-pc">
+				<span class="goods-cb inblock w-35 h-35 bgBlue cF border-box brd-a-3 brdBlue rounded-10 m-l-15 icon f-14 valign-middle-icon l-h-1 trans-300 text-center">✓</span>
+				</div>
+			</label><label onclick="dwnlManufacturer(3)" for="calc_type_3" class="w-270 h-100-pc inblock relative">
+				<img class="pointer-auto w-160 opac-100 trans-300" style="margin: 0 auto; display: block;" src="assets/img/goods/producers/3.png" alt=""><br>
+				<div class="text-center absolute bottom w-100-pc">
+				<span class="goods-cb inblock w-35 h-35 bgBlue cF border-box brd-a-3 brdBlue rounded-10 m-l-15 icon f-14 valign-middle-icon l-h-1 trans-300 text-center">✓</span>
+				</div>
+			</label><label onclick="dwnlManufacturer(4)" for="calc_type_4" class="w-270 h-100-pc inblock relative">
+				<img class="pointer-auto w-160 opac-100 trans-300" style="margin: 0 auto; display: block;" src="assets/img/goods/producers/4.png" alt=""><br>
+				<div class="text-center absolute bottom w-100-pc">
+				<span class="goods-cb inblock w-35 h-35 bgBlue cF border-box brd-a-3 brdBlue rounded-10 m-l-15 icon f-14 valign-middle-icon l-h-1 trans-300 text-center">✓</span>
+				</div>
+			</label>		</div>
+	</div>
+
+	<div class="text-justify-hack m-t-80 p-b-20">
+		<div class="inblock w-1200">
+
+
+			<div id="size">
+			<h4 class="normal f-30 ws-nowrap">Введите вес малыша
+			<input type="tel" onclick="$('#weightChild').val('');" onchange="setWeightPampers()" id="weightChild" name="data[weightChild]" class="text-center inblock w-85 h-50 border-box brd-a-2 brdLightBlue rounded f-24 cAF p-a-25 p-l-15 p-r-15 p-t-0 p-b-0 m-l-15 m-r-15 trans-300" style="margin-top: -5rem" value="0"> кг.</h4>
+			<div class="relative h-75 m-t-25 m-b-65">
+				<p id="markName" class="text-justify-hack f-20 c8B">
+					0&thinsp;кг.
+					5&thinsp;кг.
+					10&thinsp;кг.
+					15&thinsp;кг.
+					20&thinsp;кг.
+					25&thinsp;кг.
+				</p>
+
+				<div class="absolute left right bottom h-40 text-justify-hack valign-middle cBlue">
+					<span class="icon inblock f-31 lh-100-pc">🚼</span>
+
+					<div id="lineWeight" class="pointer-auto inblock w-1140 border-box brd-l-1 brd-r-1 h-25 relative">
+						<svg style="cursor: pointer;" class="absolute left top bottom w-100-pc h-25 m-a-auto" viewBox="0 0 1140 15">
+
+							
+							
+							<line x1="0" y1="50%" x2="100%" y2="50%" style="cursor: pointer; stroke:#e9e9e9;stroke-width:15;stroke-dasharray:2 230;stroke-dashoffset:20" />
+							<line id="marks" x1="0" y1="50%" x2="0" y2="50%" style="cursor: pointer; stroke:#228dd3;stroke-width:15;stroke-dasharray:2 230;stroke-dashoffset:20" />
+							<line x1="10" y1="8" x2="1120" y2="8" style="cursor: pointer; stroke:#e9e9e9;stroke-width:5;stroke-linecap:round" />
+							<line id="upLine" x1="10" y1="8" x2="11" y2="8" style="cursor: pointer; stroke:#228dd3;stroke-width:5;stroke-linecap:round" />
+							<line id="witchLine1" x1="10" y1="8" x2="0" y2="8" style="display: none; cursor: pointer; stroke:#ffde0c;stroke-width:6;stroke-linecap:round" />
+							<line id="witchLine2" x1="0" y1="8" x2="0" y2="8" style="display: none; cursor: pointer; stroke:#ffde0c;stroke-width:6;stroke-linecap:round" />
+						</svg>
+						<div id="circledLineWeight" data-min="1" data-max="5" data-label="#xxx" data-input="#xxx" class="calc-range-drag inblock relative ontop w-45 h-45 rounded goods-drag bg-100pc-auto bg-no-repeat pointer-auto" style="margin-top: -10rem; margin-left: -25rem; left: 20rem;"></div>
+					</div>
+
+					<span class="icon inblock f-39 lh-100-pc">&#x1f6c9;</span>
+				</div>
+			</div>
+			</div>
+
+			
+		</div>
+	</div>
+	<div class="text-justify-hack valign-middle relative onmiddle cBlue">
+		<div id="product" class="inblock w-100-pc relative onbottom">
+			<div class=""><h3 class="f-20 text-center agcooper bold">Выберите производителя<h3><p class="text-center f-100">&#10006;</p></div>
+		</div>
+	</div>
+	<div class="text-justify-hack brd-t-1 brdE4 p-t-65 p-b-40">
+		<div class="inblock w-660 h-145 relative">
+			<div class="absolute left right top text-justify-hack brdD6">
+				<h4 class="normal f-30 ws-nowrap inblock h-50 valign-middle-hack">Адрес доставки:</h4>
+
+				<input id="inputAddr" type="text" onchange="$('#textAddr').html($(this).val());" name="data[addr]" class="inblock w-440 h-50 border-box brd-a-2 brdLightBlue rounded f-18 cAF p-a-25 p-t-0 p-b-0 trans-300">
+			</div>
+
+			<div class="absolute left bottom brdD6">
+				<h4 class="normal f-30 ws-nowrap inblock h-50 valign-middle-hack">Ваше имя:</h4>
+
+				<input id="inputFio" type="text" onchange="$('#textName').html($(this).val());" name="data[name]" class="inblock w-170 h-50 border-box brd-a-2 brdLightBlue rounded f-18 cAF p-a-25 p-t-0 p-b-0 m-l-5 trans-300">
+			</div>
+
+			<div class="absolute right bottom brdD6">
+				<h4 class="normal f-30 ws-nowrap inblock h-50 valign-middle-hack">Телефон:</h4>
+
+				<input type="tel" id="phoneNum" onchange="discount(); $('#textPhone').html($(this).val());" name="data[phone]" class="inblock w-195 h-50 border-box brd-a-2 brdLightBlue rounded f-18 cAF p-a-25 p-t-0 p-b-0 m-l-5 trans-300">
+			</div>
+		</div>
+
+		<div class="inblock relative h-145 w-1 bgE4 cCA icon f-11">
+			<div class="bgF absolute right top bottom h-45 w-8 m-a-auto valign-middle-icon l-h-1">→</div>
+		</div>
+
+		<div class="inblock w-350 h-145 relative">
+			<h4 class="normal f-30 ws-nowrap">Выберите вариант оплаты</h4>
+
+			<div class="inblock m-t-40 text-justify-hack valign-middle w-350 f-25 cB0 p-t-5">
+				На&thinsp;сайте
+				<input type="checkbox" onchange="setPayMethod()" name="data[paymentonsite]" id="calc_paymentonsite" value="1" class="nodisplay" checked>
+				<label for="calc_paymentonsite" class="trans-200 goods-drag-select inblock h-49 w-80 rounded bgBlue clear">
+					<div class="relative ontop m-t-2 m-l-2 w-45 h-45 rounded goods-drag bg-100pc-auto bg-no-repeat trans-100"></div>
+				</label>
+				Наличными
+			</div>
+			
+		</div>
+	</div>
+	<div class="text-justify-hack brd-t-1 brdE4 p-t-65 p-b-35 relative">
+		
+		<div class="inblock w-660 h-130">
+
+			<table id="recheck" class="w-100-pc h-100-pc">
+				<tr>
+					<td class="valign-top">
+						<h4 class="normal f-30 ws-nowrap lh-100-pc">Вы заказали: (Перепроверьте)</h4>
+					</td>
+				</tr>
+				<tr>
+					<td class="valign-middle f-18 cB0">
+						<span id="textNamePr"><span class="cRed valign-baseline" >Не выбран подгузник </span></span>
+						с оплатой
+						<strong class="valign-baseline" id="textType">по карте </strong>
+						и доставкой по адресу:
+						<br>
+						<strong class="valign-baseline"><span id="textAddr"><span class="cRed"> Не указанно</span> </span></strong>
+					</td>
+				</tr>
+				<tr>
+					<td class="valign-bottom f-18 cB0">
+						<span class="m-r-10">
+							<strong class="valign-baseline cBlue">Ваше имя:</strong>
+							<span class="valign-baseline" id="textName"><span class="cRed"> Не указанно</span> </span>
+						</span>
+						<span class="m-r-10">
+							<strong class="cBlue">Ваш телефон:</strong>
+							<span class="valign-baseline" id="textPhone"><span class="cRed"> Не указанно</span> </span>
+						</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="inblock relative h-145 w-1 bgE4 cCA icon f-11">
+			<div class="bgF absolute right top bottom h-45 w-8 m-a-auto valign-middle-icon l-h-1">→</div>
+		</div>
+
+		<div class="inblock w-350 h-130">
+			<table class="w-100-pc h-100-pc">
+				<tr>
+					<td class="w-155">
+						<h4 class="normal f-30 ws-nowrap lh-100-pc">Скидка:</h4>
+					</td>
+					<td>
+						<h4 class="normal f-30 ws-nowrap lh-100-pc">Итого:</h4>
+					</td>
+				</tr>
+				<tr class="valign-middle">
+					<td>
+						<div id="persent" class="inblock h-50 w-90 brd-a-2 rounded bgBlue cF text-center f-30 valign-middle-icon lh-100-pc">
+							0%
+						</div>
+					</td>
+					<td>
+						<div id="cost2" class="inblock h-50 w-160 brd-a-2 rounded bgBlue cF text-center f-30 valign-middle-icon lh-100-pc">
+							150 руб.
+						</div>
+					</td>
+				</tr>
+				<tr class="valign-bottom">
+					<td colspan="2">
+						<a href="index.html#steps" class="f-18 cBlue inblock brd-b-1 brdBlue lh-100-pc">Узнайте, как получить скидку</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="bgF absolute left right bottom h-45 w-45 m-a-auto valign-middle-icon l-h-1 cCA icon f-11" style="transform: rotate(90deg); margin-bottom: -37rem;">→</div>
+	</div>
+	<div class="text-justify-hack brd-t-1 brdE4 p-t-45 p-b-35 text-center">
+		<div class="h-13 w-600 clear" style="margin: 0 auto">
+			<h4 class="normal f-30 ws-nowrap inblock">Нужны ли вам салфетки?</h4>
+			<div class="m-t-8 inblock text-justify-hack valign-middle w-200 f-25 cB0 pull-right">
+				Да
+				<input type="checkbox" onchange="countFormCost()" name="data[napkins]" id="calc_napkins" value="1" class="nodisplay" checked>
+				<label for="calc_napkins" class="trans-200 goods-drag-select inblock h-49 w-80 rounded bgBlue clear ">
+					<div class="relative ontop m-t-2 m-l-2 w-45 h-45 rounded goods-drag bg-100pc-auto bg-no-repeat trans-100"></div>
+				</label>
+
+				Нет
+			</div>
+			<div class="f-22 cB0">Упаковка 100 шт. Цена 150 рублей.</div>
+		</div>	
+	</div>
+	<p class="text-center">
+		<button class="head-button head-button-red bgBtnRed  cF inblock relative ontop w-430 h-75 rounded text-center valign-middle-hack f-28 bold upper trans-700" onclick="swal({title: 'Подождите',	text: 'Происходит отправка формы',	showConfirmButton: true,});">Сделать заказ<span class="icon inblock f-34 m-l-20">💻</span></button>
+	</p>
+</form>
+</div><div class="block steps-block onmiddle" id="block2"><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div><div class="steps-cloud absolute left icon cF lh-100-pc"><span class="inblock">☁</span></div>
+<div class="steps-block-bg absolute left right top bottom onbottom"></div>
+
+<div class="content h-1705 p-t-245 ontop cF">
+	<div class="h-130 m-b-20 border-box brd-b-3 text-justify-hack">
+		<h2 id="steps" class="inblock w-515 testo f-53 lh-76 normal upper">
+			Накопить&nbsp;скидку —&nbsp;очень&nbsp;просто!
+		</h2>
+
+		<div class="inblock relative h-100-pc w-1 bgSomeDarkBlue m-t-20"></div>
+
+		<div class="inblock w-540 h-100-pc relative bold f-22 lh-33 cLightCyanBlue m-t-10 p-b-10">
+			<p>Скидка привязывается к номеру телефона</p>
+			<p>Введите свой номер для просмотра скидки</p>
+
+			<form action="index.html" method="POST" id="phoneCheck" class="absolute left right bottom h-50 text-justify-hack f-30 normal brdWW2Blue">
+				<label for="steps_phone" class="inblock h-100-pc valign-middle-icon lh-100-pc">Телефон:</label>
+				<input type="tel" name="data[phone]" id="steps_phone" class="inblock w-195 h-50 border-box brd-a-2 brdLightCyanBlue rounded f-18 cAF p-a-25 p-t-0 p-b-0 trans-300">
+				<input type="hidden" name="action" value="phoneCheck">
+				<button class="bouncy-button inblock w-195 h-50 border-box bgWW2Blue rounded f-18 bold text-center valign-middle-hack trans-500">Проверить</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="m-t-150 clear relative h-1195">
+		<div class="steps-discount-container pull-left h-100-pc w-60">
+			<div class="steps-discount absolute left right w-1200 h-450 m-a-auto">
+				<div class="w-450 h-60 text-justify-hack">
+					<div id="steps_discount_percent" class="inblock h-100-pc w-140 f-80 lh-100-pc bold cMidDarkBlue valign-middle-icon text-right">
+						0%
+					</div>
+
+					<div class="inblock h-100-pc w-1 bgMidDarkBlue"></div>
+
+					<div class="inblock h-100-pc cF bold ws-nowrap">
+						<div class="inblock h-100-pc upper">
+							<p class="f-26 lh-100-pc m-b-3">Больше заказов —</p>
+							<p class="f-31 lh-100-pc">Больше скидка</p>
+						</div>
+						<div class="inblock h-100-pc f-75 lh-100-pc bold valign-middle-icon">!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="foots_container" class="w-960 relative border-box brd-l-4 pull-right h-100-pc">
+			<svg class="w-100-pc icon f-16 o-visible" viewBox="0 0 956 1196">
+								<defs>
+					<path id="foots_path" d="M 151,9.6578 782,9.66 c 0,0 157,4.737 157,142.6494 0,137.9124 -143.17,134.35 -151,134.35 l -640,0 c -49.173859,1.14784 -129.042757,20.72724 -129,158.41 0.04274,137.63999 79.597,165.04 125,165.04 l 643,-1.66 c 0,0 161,3.09 161,140.99 0,137.91 -130.88,150.11 -160,150.11 l -641,0 c -48.173859,0 -139.0042464,14.41 -139,146.85 0.00424,132.3 109.91,139.3 141,139.3 l 643,0"/>
+
+					<mask id="foots_mask">
+						<text fill="#fff" dominant-baseline="middle">
+							<textPath xlink:href="#foots_path">👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣👣</textPath>
+						</text>
+					</mask>
+				</defs>
+
+				<g mask="url(#foots_mask)">
+					<rect x="0" y="0" width="100%" height="100%" fill="#1f78b3" />
+					<use xlink:href="#foots_path" id="#foots_light" fill="none" stroke="#2cabff" stroke-width="30" stroke-dasharray="10000 10000" />
+				</g>
+			</svg>
+
+			<div class="markers absolute left right top bottom onmiddle brd-l-10 brd-r-5 brd-t-7 brd-b-10 bold f-28 cAnotherDarkBlue text-center lh-100-pc">
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_off" value="0%" class="nodisplay" checked>
+
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_0" value="0%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">0%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_1" value="1%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">1%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_2" value="1%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">1%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_3" value="1%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-gift relative">
+						<img src="assets/img/steps/gifts/salft-3.png" class="absolute" style="width:100rem;top:-50rem;left:-50rem">
+						<img src="assets/img/steps/gifts/text-3.png" class="absolute onbottom trans-300" style="width:150rem;top:-78.947368421053rem;left:-71.428571428571rem" alt="Салфетки в подарок">
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_4" value="1%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">1%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_5" value="2%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">2%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_6" value="2%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">2%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_7" value="2%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-gift relative">
+						<img src="assets/img/steps/gifts/salft-7.png" class="absolute" style="width:100rem;top:-50rem;left:-50rem">
+						<img src="assets/img/steps/gifts/text-17.png" class="absolute onbottom trans-300" style="width:150rem;top:-78.947368421053rem;left:-71.428571428571rem" alt="Салфетки в подарок">
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_8" value="2%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">2%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_9" value="3%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">3%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_10" value="3%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">3%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_11" value="3%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">3%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_12" value="3%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-gift relative">
+						<img src="assets/img/steps/gifts/salft-12.png" class="absolute" style="width:100rem;top:-50rem;left:-50rem">
+						<img src="assets/img/steps/gifts/text-12.png" class="absolute onbottom trans-300" style="width:150rem;top:-78.947368421053rem;left:-71.428571428571rem" alt="Салфетки в подарок">
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_13" value="4%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">4%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_14" value="4%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">4%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_15" value="4%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">4%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_16" value="4%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">4%</span>
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_17" value="5%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-gift relative">
+						<img src="assets/img/steps/gifts/salft-17.png" class="absolute" style="width:100rem;top:-50rem;left:-50rem">
+						<img src="assets/img/steps/gifts/text-17.png" class="absolute onbottom trans-300" style="width:150rem;top:-78.947368421053rem;left:-71.428571428571rem" alt="Салфетки в подарок">
+					</div>
+				</div>
+				<input type="radio" name="steps_marker_cb[]" id="steps_marker_18" value="5%" class="nodisplay">
+				<div class="steps-marker absolute w-0 h-0">
+					<div class="steps-marker-inner inblock relative bg-contain trans-300 cF">
+						<span class="inblock relative ontop h-100-pc valign-middle-icon">5%</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div><div class="block hownfeedback-block ontop" id="block3"><div class="absolute left right top h-1500 hownfeedback-bg-top"></div>
+<div class="absolute left right bottom h-1500 hownfeedback-bg-bottom"></div>
+
+
+<div class="p-t-100">
+	<div class="how-block h-1035 relative">
+		<div class="how-block-bg absolute left right top bottom"></div>
+
+		<div class="content_winsize cF text-center">
+			
+			<h1 id="how" class="testo regular f-54 upper p-t-50 p-b-10">Как мы работаем?</h1>
+
+			<div class="inblock w-1220 h-545 how-slider bg-100pc-auto bg-no-repeat pointer-auto">
+
+				<div class="inlock rounded-25 bgF c0 o-hidden">
+					<div class="swiper-container" id="how_slider">
+						<div class="swiper-wrapper">
+						
+ 	
+							<div class="swiper-slide comicSans">
+								<img src="assets/img/how-n-feedback/1.png" class="w-480 m-l-25 inblock m-a-0 m-t-60" alt=""><img src="assets/img/how-n-feedback/2.png" class="w-480 m-l-25 inblock m-a-0 m-t-60" alt="">
+								<div class="absolute bottom left w-480 text-center f-15 m-l-25 m-b-15 bold">Если пакет с подгузниками пуст совсем...</div>
+								<div class="absolute bottom right w-480 text-center f-15 m-b-15 m-r-20 bold">На выручку придёт супергерой "Памперсмен"</div>
+							</div>
+ 	
+							<div class="swiper-slide comicSans">
+								<img src="assets/img/how-n-feedback/3.png" class="w-480 m-l-25 inblock m-a-0 m-t-60" alt=""><img src="assets/img/how-n-feedback/4.png" class="w-480 m-l-25 inblock m-a-0 m-t-60" alt="">
+								<div class="absolute bottom left w-480 text-center f-15 m-l-25 m-b-15 bold">Мы с любовью и заботой подготовим Ваш заказ<div style="position: absolute; top: -270rem; left: 160rem;">Склад супер-подгузников</div></div>
+								<div class="absolute bottom right w-480 text-center f-15 m-b-15 m-r-20 bold">Курьер с подгузниками отправиться к Вам в сей же час</div>
+							</div>
+ 	
+							<div class="swiper-slide comicSans">
+								<img src="assets/img/how-n-feedback/5.png" class="w-480 m-l-25 inblock m-a-0 m-t-60" alt=""><img src="assets/img/how-n-feedback/6.png" class="w-480 m-l-25 inblock m-a-0 m-t-60" alt="">
+								<div class="absolute bottom left w-480 text-center f-15 m-l-25 m-b-15 bold">Посылку мы доставим Вам прямо до двери!</div>
+								<div class="absolute bottom right w-480 text-center f-15 m-b-15 m-r-20 bold">Удобство и комфорт Вам рады мы дарить!</div>
+							</div>
+ 
+						</div>
+					</div>
+				</div>
+
+				<a href="index.html#" id="how_slider_next" class="absolute w-80 h-80 p-t-1 p-b-1 slider-arrow-right	bg-100pc-auto bg-no-repeat hover-anim-right-5 trans-300"></a>
+
+				<a href="index.html#" id="how_slider_prev" class="absolute w-80 h-80 p-t-1 p-b-1 slider-arrow-left	bg-100pc-auto bg-no-repeat hover-anim-left-5 trans-300"></a>
+
+				<div class="how_swiper_pagination inlock relative"></div>
+
+			</div>
+			<br>
+			<div class="w-500 h-145 how-button bg-center bg-bottom bg-no-repeat inblock m-t-65">
+				<a href="index.html#goods" class="head-button head-button-yellow bgBtnYellow inblock relative ontop w-380 h-75 rounded text-center valign-middle-hack f-28 bold upper trans-700">Оставить заявку<span class="icon inblock f-34 m-l-20">💻</span></a>
+			</div>
+
+		</div>
+	</div>
+</div><div class="content cF text-center p-t-20 ontop">
+
+	<h1 id="feedback" class="testo regular f-54 upper p-b-30">Отзывы</h1>
+
+	<div class="inblock fb-slider w-965 bg-no-repeat bg-100pc-auto  h-665 pointer-auto m-b-50">	
+
+		<a href="index.html#" id="feedback_slider_prev" class="absolute w-80 h-80 p-t-1 p-b-1 slider-arrow-left	bg-100pc-auto bg-no-repeat hover-anim-left-5 trans-300"></a>
+
+		<div class="inblock bg0 w-730 h-425 rounded-25 o-hidden">
+			<div class="swiper-container" id="feedback_slider">
+				<div class="swiper-wrapper">
+					
+					<div class="swiper-slide">
+						<img src="http://placekitten.com/700/500">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://placebear.com/700/500">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://www.placecage.com/c/700/500">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://placeskull.com/700/500/">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://www.placecage.com/900/600">
+					</div>
+
+				</div>
+			</div>
+			<div class="absolute f-name f-23 bold cTextGreen text-left opac-0 trans-300" id="feedback-slide0">Василиса Пупкина г. Пермь</div>
+			<div class="absolute f-name f-23 bold cTextGreen text-left opac-0 trans-300" id="feedback-slide1">Евгения Иванова г. Кунгур</div>
+			<div class="absolute f-name f-23 bold cTextGreen text-left opac-0 trans-300" id="feedback-slide2">Александра Бориславовна Сидорова г. Пермь, Мотовилихинский район</div>
+			<div class="absolute f-name f-23 bold cTextGreen text-left opac-0 trans-300" id="feedback-slide3">Валентина Петрова г. Краснокамск</div>
+			<div class="absolute f-name f-23 bold cTextGreen text-left opac-0 trans-300" id="feedback-slide4">Дарья г. Пермь</div>
+		</div>
+
+		<a href="index.html#" id="feedback_slider_next" class="absolute w-80 h-80 p-t-1 p-b-1 slider-arrow-right	bg-100pc-auto bg-no-repeat hover-anim-right-5 trans-300"></a>
+
+		<div class="feedback_swiper_pagination inblock"></div>
+
+
+	</div>
+
+	<div class="bold f-23 p-b-120">
+		<div class="inblock valign-middle-hack l-h-1 h-60">
+			Запишите видео-отзыв и получите упаковку памперсов в подарок!
+		</div>
+		<label for="footer_callback_show" class="inblock w-320 h-59 rounded-30 bgDarkGreen cLightGreen m-l-60 valign-middle-hack greenbutton trans-500">Узнать подробнее</label>
+	</div>
+
+</div></div><div class="block bgF p-b-180" id="block4"><div class="content text-center p-b-100">
+	<h1 id="faq" class="f-54 testo regular upper cBlue p-t-90 p-b-100">Вопрос - ответ</h1>
+
+	<div class="clear">
+		<input type="radio" name="faq_cb[]" id="faq_cb_0" class="nodisplay" checked>
+		<input type="radio" name="faq_cb[]" id="faq_cb_1" class="nodisplay">
+		<input type="radio" name="faq_cb[]" id="faq_cb_2" class="nodisplay">
+		<input type="radio" name="faq_cb[]" id="faq_cb_3" class="nodisplay">
+		<input type="radio" name="faq_cb[]" id="faq_cb_4" class="nodisplay">
+		<input type="radio" name="faq_cb[]" id="faq_cb_5" class="nodisplay">
+		<input type="radio" name="faq_cb[]" id="faq_cb_6" class="nodisplay">
+		<input type="radio" name="faq_cb[]" id="faq_cb_7" class="nodisplay">
+
+		<div class="faq-labels w-50-pc pull-left f-22 c33">
+			<p class="h-70">
+				<label for="faq_cb_0" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">С какого завода мы поставляем?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_1" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">От скольки литров возможна доставка?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_2" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">Какие обычно сроки доставки?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_3" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">Какие есть варианты оплаты?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_4" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">Сколько будет стоить доставка загород?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_5" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">Почему Ваша цена отличается от цены на АЗС?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_6" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">Качественное ли у Вас топливо?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+			<p class="h-70">
+				<label for="faq_cb_7" class="inblock relative w-100-pc valign-middle text-justify-hack">
+					<span class="inblock">Есть ли у Вас скидки от объемов?</span>
+					<span class="icon inblock f-12 cBlue trans-300">&#x2304;</span>
+				</label>
+			</p>
+		</div>
+		<div class="faq-fields w-555 pull-right clear brd-a-3 brdE6 p-a-30 border-box f-18 lh-25 regular c6C">
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Post-hacker neon futurity corrupted systema tank-traps narrative car katana tower drone cartel dome network. Convenience store refrigerator fetishism tube tattoo market Shibuya 3D-printed Tokyo urban sunglasses. Sensory free-market geodesic assault futurity order-flow Shibuya shoes plastic. Lights chrome wristwatch silent futurity car ablative 8-bit military-grade beef noodles into sprawl network. Franchise beef noodles geodesic realism drugs Chiba advert corporation systemic. Marketing youtube shoes footage urban order-flow sign modem cartel monofilament. Narrative weathered woman cartel shrine computer gang singularity dead rain long-chain hydrocarbons. Rifle apophenia RAF math-sprawl tattoo bicycle crypto-artisanal dolphin tube. Assault fluidity footage denim numinous j-pop monofilament sentient plastic cyber-kanji courier. Urban chrome lights wonton soup boat youtube warehouse claymore mine engine-ware saturation point render-farm j-pop Legba.-space stimulate grenade tube lights dissident digital decay corrupted post-BASE jump. City fluidity augmented reality spook Kowloon pistol sub-orbital. Voodoo god A.I. Chiba disposable free-market numinous drugs BASE jump silent-space marketing chrome hacker footage katana. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Voodoo god 8-bit uplink semiotics narrative military-grade soul-delay stimulate network crypto-dome papier-mache euro-pop render-farm nodal point systemic. Pre-fetishism A.I. fluidity sub-orbital rain sunglasses soul-delay kanji. Footage corrupted wristwatch franchise woman towards augmented reality sign carbon marketing modem dissident singularity j-pop claymore mine 8-bit network. Footage augmented reality tower youtube grenade pistol fluidity long-chain hydrocarbons face forwards ablative cardboard. City fetishism pistol drugs bicycle vehicle lights narrative hotdog alcohol 8-bit neural euro-pop rifle face forwards. Order-flow carbon boy corporation vinyl neural Tokyo nodality assault shanty town free-market drugs RAF computer vehicle grenade. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Into drugs corrupted systema post-dissident face forwards car fluidity. Pen tanto math-tattoo urban hacker fluidity corporation computer uplink systema franchise tower BASE jump papier-mache. Nodal point office pre-media uplink face forwards refrigerator sentient apophenia. RAF crypto-city modem monofilament rifle-ware digital rebar advert. Cardboard vehicle DIY savant garage Kowloon wonton soup sign tower render-farm artisanal industrial grade otaku Tokyo fetishism motion uplink. Chiba katana Tokyo geodesic marketing gang receding claymore mine. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Concrete drone Shibuya bridge fluidity tattoo voodoo god semiotics. Sentient tower hacker human footage kanji shrine uplink spook. Tattoo otaku order-flow rain skyscraper pen digital hacker disposable construct. Plastic pre-vinyl wristwatch rifle narrative courier cyber-pistol nodality otaku engine singularity alcohol stimulate. Rifle free-market shrine skyscraper alcohol modem spook girl smart-neon. Math-tiger-team tower RAF katana nodality Chiba cardboard. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Fluidity range-rover dissident soul-delay A.I. corrupted nodality neon receding man film kanji crypto. Apophenia computer garage A.I. table man modem dissident advert chrome pen. Sentient render-farm Tokyo free-market weathered face forwards concrete modem silent tank-traps. Boy sprawl cyber-3D-printed tube singularity katana towards grenade. Network film tank-traps neural tanto drone dissident narrative plastic decay. Drugs tower artisanal meta-saturation point refrigerator crypto-market Chiba shrine rifle sub-orbital sprawl car silent marketing. Rain dolphin render-farm numinous dissident weathered refrigerator camera katana rifle. Neon systemic 8-bit drone apophenia car carbon disposable pistol chrome ablative smart. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Drugs realism systema digital voodoo god disposable nodal point meta-dome augmented reality bomb. Face forwards decay vinyl nodal point futurity dissident physical network construct modem. Ablative render-farm silent disposable tanto beef noodles carbon range-rover physical augmented reality cartel voodoo god euro-pop sprawl. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Free-market Tokyo fluidity camera advert pistol knife Shibuya faded shanty town physical towards dissident. Drone-space pistol soul-delay chrome silent Chiba post-drugs sprawl lights hotdog knife cyber-narrative. City alcohol 3D-printed table Kowloon chrome wristwatch. </div>
+			</div>
+			<div class="w-0 pull-left relative onmiddle opac-0 trans-500">
+				<div class="w-495">Beef noodles human RAF drugs bicycle faded table corrupted knife weathered urban. Garage assault sensory Legba systema pen cartel A.I. beef noodles pistol hotdog 8-bit San Francisco girl nano. Knife urban alcohol motion refrigerator crypto-singularity semiotics render-farm market. Meta-corrupted realism tanto hotdog sub-orbital jeans apophenia geodesic network face forwards systema cardboard dome. Woman Tokyo RAF bicycle shanty town warehouse Legba boat marketing. Urban weathered dolphin katana boy plastic euro-pop sub-orbital 8-bit tiger-team. Sentient futurity realism apophenia hotdog savant footage math-beef noodles vinyl augmented reality boy dome. </div>
+			</div>
+		</div>
+	</div>
+</div></div><div class="block ontop" id="block5"><div class="content">
+	<form  action="http://ppman.lc/ajax" method="POST" class="q-form absolute w-1040 bgDeepBlue cF p-l-80 p-r-80 text-justify-hack">
+		<input type="hidden" name="action" value="callback">
+		<div class="inblock w-350">
+			<h1 class="testo regular f-38 p-t-60 p-b-30">Остались вопросы?</h1>
+			<input type="text" name="data['name']" placeholder="Ваше имя" class="w-165 h-49 rounded-25 border-box brd-a-2 brdVeryDarkBlue p-l-25 p-r-25 f-18 cF m-b-40 p-b-3 trans-300">
+			<input type="text" name="data['phone']" placeholder="Телефон" class="w-165 h-49 rounded-25 border-box brd-a-2 brdVeryDarkBlue p-l-25 p-r-25 f-18 cF m-b-40 m-l-15 p-b-3 trans-300">
+		</div>
+		<textarea name="data['question']" placeholder="Ваш вопрос" class="inblock w-390 h-115 m-l-20 border-box brd-a-2 brdVeryDarkBlue rounded-25 m-t-75 p-a-20 p-l-25 p-r-25 f-18 cF trans-300"></textarea>
+		<div class="inblock w-265">
+			<img src="assets/img/faq/pampersman.png" alt="Pampaersman - доставка подгузников 24 часа" class="pm">
+			<button for="q-form" class="bouncy-button m-t-15 inblock w-255 h-49 rounded-25 bgVeryDarkBlue cF f-18 bold text-center m-l-15 valign-middle-hack l-h-1 trans-500" onclick="swal({title: 'Подождите',	text: 'Происходит отправка формы',	showConfirmButton: true,});">Задать нам вопрос <span class="icon p-l-5 f-16">&rarr;</span></button>
+		</div>
+	</form>
+</div></div><div class="block map-block map" id="block6"><div class="bgMediumBlue">
+	<div class="content_winsize h-800">
+		<div class="absolute left right top bottom w-1200 m-a-auto ontop">
+			<div class="w-445 h-100-pc relative ontop c33 f-18 regular text-right">
+				<div class="absolute top bottom right w-1920 onbottom o-hidden map-bg"></div>
+			</div>
+			<div class="absolute right top w-445 text-left cF">
+				<h1 class="testo f-38 normal p-b-25 p-t-20 m-t-250 m-l-95">Мы здесь!</h1>
+				
+				<svg class="absolute vzd h-120" viewBox="0 0 32 116">
+					<path fill="#2388cb" d="M294.5,364l-0.06,112.58s-0.18,8.21,0-5.56c0.21-15.53-31.94-13.22-31.94-43.94,0-29.34,31.94-27.31,31.94-44.23C294.44,369.19,294.5,364,294.5,364Z" transform="translate(-262.5 -364)"/>
+				</svg>
+				
+				<div class="icon absolute vzd h-120 valign-middle-icon l-h-1 f-28 m-l-30 p-t-5">&larr;</div>
+				<p class="lh-30 f-20 regular m-l-95">Адрес: г. Пермь, ул. Яблочкова, 9</p>
+				<p class="lh-30 f-20 regular m-l-95">
+					Post-sub-orbital woman bomb tank-traps render-farm shanty town geodesic Chiba augmented reality-ware singularity. City marketing neon jeans bicycle nodal point stimulate face forwards pistol BASE jump film claymore mine cyber-sign crypto. San Francisco fluidity tanto shoes camera wonton soup assassin face forwards rain garage weathered modem dolphin tower rebar warehouse hacker. Warehouse spook network silent assassin uplink concrete-ware industrial grade decay. Post-garage hotdog.
+				</p>
+			</div>
+		</div>
+
+		<div id="map_container" class="h-100-pc pointer-auto"></div>
+
+	</div>
+</div></div><div class="block bgDarkBlue" id="block7"><div class="content regular cF h-60 text-justify-hack valign-middle-icon l-h-1">
+	<div class="inblock">
+		Тут типо текст со всякой фигнёй о политике безопасности, ну или другая инфа главное чтоб влезло оно всё
+	</div>
+	<div class="inblock">
+		Есть такие ребята, которые сайтами балуются: <a href="http://milan-design.ru" class="bold">Milan Design</a>
+	</div>
+</div></div></div></div><div class="footer-button-container pointer-none footer-button-container-hidden fixed left right top w-1200 m-a-auto p-t-30 clear ontop trans-700">
+	<a href="index.html" class="inblock pull-left w-255 border-box brd-r-1">
+		<img src="assets/img/head/logo.png" alt="Pampers Man" class="w-100-pc">
+	</a>
+
+	<label for="show_menu" class="menu_label inblock pull-right w-70 relative ontop border-box brd-r-2 m-t-30 brd-t-4 brd-b-4">
+		<img src="assets/img/head/menu_back_red.svg" class="menu_label_back absolute left top w-100-pc onbottom pointer-none">
+		<div class="menu_label_front relative trans-300 pointer-none">
+			<img src="assets/img/head/menu_front.svg" class="w-100-pc">
+			<div class="menu_label_stripes absolute right top w-25 h-5 m-r-25 m-t-35 bgF rounded trans-300"></div>
+		</div>
+	</label>
+</div>
+
+<div class="footer-menu-container fixed left right top bottom ontop bgRed cF text-center p-t-140 valign-middle-hack trans-700"><div class="footer-menu inblock pointer-none f-120 lh-100-pc bold upper">
+		<p class="h-30 m-t-40 m-b-40 valign-middle-icon trans-300">
+			<a href="index.html#">Главная страница</a>
+		</p>
+		<p class="h-30 m-t-40 m-b-40 valign-middle-icon trans-300">
+			<a href="index.html#goods">Оставить заявку</a>
+		</p>
+		<p class="h-30 m-t-40 m-b-40 valign-middle-icon trans-300">
+			<a href="index.html#steps">Система скидок</a>
+		</p>
+		<p class="h-30 m-t-40 m-b-40 valign-middle-icon trans-300">
+			<a href="index.html#how">Как мы работаем?</a>
+		</p>
+		<p class="h-30 m-t-40 m-b-40 valign-middle-icon trans-300">
+			<a href="index.html#feedback">Довольные клиенты</a>
+		</p>
+		<p class="h-30 m-t-40 m-b-40 valign-middle-icon trans-300">
+			<a href="index.html#faq">Вопрос-ответ</a>
+		</p>
+	</div><div class="absolute left right w-1200 m-a-auto top ontop">
+		<div class="p-t-30 clear">
+			<a href="index.html" class="inblock pull-left w-255 border-box brd-r-1">
+				<img src="assets/img/head/logo.png" alt="Pampers Man" class="w-100-pc">
+			</a>
+
+			<label for="show_menu" class="menu_label inblock pull-right w-70 relative ontop border-box brd-r-2 m-t-30 brd-t-4 brd-b-4">
+				<img src="assets/img/head/menu_back_red.svg" class="menu_label_back absolute left top w-100-pc onbottom pointer-none">
+				<div class="menu_label_front relative trans-300 pointer-none">
+					<img src="assets/img/head/menu_front.svg" class="w-100-pc">
+					<div class="menu_label_stripes absolute right top w-25 h-5 m-r-25 m-t-35 bgF rounded trans-300"></div>
+				</div>
+			</label>
+
+			<div class="pull-right m-r-30 m-t-35 p-r-4 p-t-3 text-right">
+				<p>
+					<a href="tel:+79523292470" class="agcooper f-38 lh-100-pc">+7&thinsp;(952)&thinsp;329-24-70</a>
+				</p>
+				<p>
+					<label for="footer_callback_show" class="bold f-20 lh-100-pc inblock brd-b-2 brdF">Заказать бесплатный звонок</label>
+				</p>
+			</div>
+		</div>
+	</div></div>
+
+<input type="checkbox" id="footer_callback_show" class="nodisplay">
+<div class="footer-callback-container fixed left right top bottom ontop bg-center bg-no-repeat text-center valign-middle-hack trans-700"><form action="http://ppman.lc/ajax" method="POST" class="footer-callback-form inblock w-870 h-440 relative cF">
+		<input type="hidden" name="action" value="callback">
+		<label for="footer_callback_show" class="footer-callback-btn absolute right top m-t-80 w-65 h-65 rounded bgRed trans-300">
+			<div class="footer-callback-close-stripes absolute left right top bottom w-25 h-5 m-a-auto rounded trans-300"></div>
+		</label>
+
+		<h1 class="regular f-40 m-t-120 m-b-40 cLightBlue">Сделать заказ по телефону</h1>
+
+		<div class="regular f-30 cLightBlue brdD6">
+			<label for="footer_callback_name" class="inblock h-50 valign-middle-hack">Ваше имя:</label>
+			<input type="text" name="data[name]" class="inblock w-170 h-50 border-box brd-a-2 brdLightBlue rounded f-18 cAF p-a-25 p-t-0 p-b-0 text-left trans-300">
+
+			<label for="footer_callback_name" class="inblock h-50 valign-middle-hack m-l-20">Ваш телефон:</label>
+			<input type="tel" name="data[phone]" class="inblock w-170 h-50 border-box brd-a-2 brdLightBlue rounded f-18 cAF p-a-25 p-t-0 p-b-0 text-left trans-300">
+		</div>
+
+		<button class="footer-callback-btn inblock absolute left right bottom w-320 h-70 m-a-auto rounded bgRed bold f-25 upper text-center trans-300" onclick="swal({title: 'Подождите',	text: 'Происходит отправка формы',	showConfirmButton: true,});">
+			Оставить заявку
+		</button>
+	</form></div>
+
+<svg class="absolute w-0 h-0">
+	<defs>
+		<filter id="Text3D" primitiveUnits="objectBoundingBox">
+			<feFlood flood-color="#69a8d8" flood-opacity="1" result="flood"/>
+			<feComposite in="flood" in2="SourceAlpha" operator="in" result="fill" />
+			<feOffset in="fill" dx="0" dy="0.047" result="offset"/>
+
+			<feFlood flood-color="#1c618e" flood-opacity="0.64" result="flood2"/>
+			<feComposite in="flood2" in2="offset" operator="in" result="fill2" />
+			<feOffset in="fill2" dx="0" dy="-0.0353" result="offset2"/>
+			<feGaussianBlur in="offset2" stdDeviation="0.00647 0.0588" result="blur2"/> 
+
+			<feComposite in="SourceGraphic" in2="offset" operator="over" result="over1" />
+			<feComposite in="over1" in2="blur2" operator="over" />
+		</filter>
+		<filter id="Text3DSmall" primitiveUnits="objectBoundingBox">
+			<feFlood flood-color="#69a8d8" flood-opacity="1" result="flood"/>
+			<feComposite in="flood" in2="SourceAlpha" operator="in" result="fill" />
+			<feOffset in="fill" dx="0" dy="0.0238" result="offset"/>
+
+			<feFlood flood-color="#1c618e" flood-opacity="0.64" result="flood2"/>
+			<feComposite in="flood2" in2="offset" operator="in" result="fill2" />
+			<feOffset in="fill2" dx="0" dy="-0.0238" result="offset2"/>
+			<feGaussianBlur in="offset2" stdDeviation="0.00647 0.04" result="blur2"/> 
+
+			<feComposite in="SourceGraphic" in2="offset" operator="over" result="over1" />
+			<feComposite in="over1" in2="blur2" operator="over" />
+		</filter>
+		<filter id="blue_shadow">
+			<feFlood flood-opacity="0.75" flood-color="rgb(22,76,112)" result="f1" />
+			<feComposite in="f1" in2="SourceGraphic" operator="in" result="f2" />
+			<feGaussianBlur in="f2" stdDeviation="21.5" result="f3" />
+			<feComposite in="SourceGraphic" in2="f3" operator="over" />
+		</filter>
+		<filter id="green_shadow">
+			<feFlood flood-opacity="1" flood-color="rgb(157,196,46)" result="f1" />
+			<feComposite in="f1" in2="SourceGraphic" operator="in" result="f2" />
+			<feGaussianBlur in="f2" stdDeviation="20" result="f3" />
+			<feComposite in="SourceGraphic" in2="f3" operator="over" />
+		</filter>
+		<filter id="darkgreen_shadow">
+			<feFlood flood-opacity="1" flood-color="rgb(96,120,28)" result="f1" />
+			<feComposite in="f1" in2="SourceGraphic" operator="in" result="f2" />
+			<feGaussianBlur in="f2" stdDeviation="20" result="f3" />
+			<feComposite in="SourceGraphic" in2="f3" operator="over" />
+		</filter>
+
+		<mask id="goods_mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<path d="m1 0c-0.14685 0.017353-0.37277 0.023746-0.58195 0.0091332-0.16515-0.015526-0.33181 0.0091338-0.41805 0.025573v0.96529h1z" fill="#fff"/>
+		</mask>
+		<mask id="steps_mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<path fill="#fff" d="m1 0.0002c-0.011863 0.0003-0.023991 0.0007-0.036458 0-0.35764 0.013-0.33333 0.052-0.60573 0.052-0.20173 0-0.31341-0.016-0.35781-0.024v0.9718h1v-1z"/>
+		</mask>
+		<mask id="hownfeedback_mask_top" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<path fill="#fff" d="M 0.18593,0 C 0.1159,9.962e-5 0.05119,0 0,0.0099621 l 0,0.99004 1,0 0,-0.95039 C 0.87092,0.0625641 0.70062,0.0655531 0.50151,0.0276971 0.39431187,0.00819673 0.27518496,0.00783352 0.18593,0 Z" />
+		</mask>
+		<mask id="hownfeedback_mask_bot" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<path fill="#fff" d="m0 0.94901c0.0426-0.0007 0.0904 0 0.14219 0 0.16034 0 0.36516 0.045 0.56562 0.051h0.29219v-1h-1z"/>
+		</mask>
+		<mask id="hownfeedback_mask_inner" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<path fill="#fff" d="m1 0.0018014c-0.07744 0.048039-0.20557 0.098079-0.35677 0.040032-0.17748-0.068054-0.48689 0-0.64323 0.040032v0.82406c0.057993-0.001001 0.12849-0.00040032 0.20365 0 0.19336 0.01301 0.417 0.065052 0.59688 0.084067 0.07765 0.01001 0.14762 0.01001 0.19947 0.01001v-1z"/>
+		</mask>
+		<mask id="map_mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<path fill="#fff" d="m1 0c-0.09341 0.0378-0.33752 0.12458-0.51094 0.077-0.17273-0.04734-0.40096 0.02596-0.48906 0.05877v0.86423h1v-1z"/>
+		</mask>
+	</defs>
+</svg></body></html>
