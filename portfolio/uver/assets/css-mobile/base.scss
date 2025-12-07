@@ -1,0 +1,333 @@
+@import 'defs/config';
+@import 'defs/mixins';
+
+/************************************************************************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+
+	outline: none;
+	border: none;
+	box-shadow: none;
+	background: none;
+
+	font-size: inherit;
+	font-family: inherit;
+
+	text-align: inherit;
+	vertical-align: inherit;
+
+	text-decoration: inherit;
+	color: inherit;
+
+	white-space: inherit;
+
+	line-height: inherit;
+
+	cursor: default;
+}
+
+html,body {
+	@extend .h-100-pc;
+}
+
+.wrapper , .body:before , .pointer-none {
+	pointer-events: none;
+}
+body , .select-none {
+	@include user-select("none");
+}
+a, input, select, textarea, button, label, iframe, .pointer-auto {
+	pointer-events: auto;
+}
+input , textarea , .select-text {
+	@include user-select("text");
+}
+.select-all {
+	@include user-select("all");
+}
+
+input , textarea , .select-all , .select-text {
+	cursor: text;
+}
+a , a * , button , button * , label , label * , input[type=button] , input[type=reset] , input[type=submit] , .cursor-pointer {
+	cursor: pointer;
+}
+
+table {
+	border-collapse: collapse;
+	//table-layout: fixed;
+}
+
+sup,sub {
+	font-size: .625em;
+}
+sup {
+	@extend .valign-top;
+}
+sub {
+	@extend .valign-bottom;
+}
+
+textarea {
+	resize: none;
+}
+
+/************************************************************************************************/
+
+.relative {position: relative;}
+.absolute {position: absolute;}
+.fixed    {position: fixed;}
+
+.top    {top:0;}
+.bottom {bottom:0;}
+.left   {left:0;}
+.right  {right:0;}
+
+.inblock   {display: inline-block;}
+.nodisplay {display: none;}
+
+.visible   {visibility: visible;}
+.invisible {visibility: hidden;}
+
+.pull-left   {float: left;}
+.pull-right  {float: right;}
+.clear:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.content-box	{@include box-sizing(content-box);}
+.border-box		{@include box-sizing(border-box);}
+
+.valign-top			{vertical-align: top;}
+.valign-middle		{vertical-align: middle;}
+.valign-bottom		{vertical-align: bottom;}
+.valign-baseline	{vertical-align: baseline;}
+
+//@for $i from 0 through 20 {.valign-#{$i*5}-pc {vertical-align:#{percentage($i*5/100)}}}
+
+.valign-helper {
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		visibility: hidden;
+		vertical-align: inherit;
+	}
+}
+.valign-middle-hack {
+	@extend .valign-middle;
+	@extend .valign-helper;
+}
+.valign-bottom-hack {
+	@extend .valign-bottom;
+	@extend .valign-helper;
+}
+
+.valign-middle-icon {
+	&:before {
+		content: '';
+		display: block;
+		position: relative;
+		height: 50%;
+		margin-bottom: -.5em;
+		visibility: hidden;
+	}
+}
+
+.text-left    {text-align: left;}
+.text-right   {text-align: right;}
+.text-center  {text-align: center;}
+.text-justify {text-align: justify;}
+
+.text-last-left    {@include text-align-last(left);}
+.text-last-right   {@include text-align-last(right);}
+.text-last-center  {@include text-align-last(center);}
+.text-last-justify {@include text-align-last(justify);}
+
+.text-justify-hack {
+	@extend .text-justify;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 0;
+		visibility: hidden;
+	}
+}
+
+.rtl {direction: rtl;}
+.ltr {direction: ltr;}
+
+.ontop    {z-index: 1;}
+.onmiddle {z-index: 0;}
+.onbottom {z-index: -1;}
+
+.thin 	 {font-weight: 100;}
+.light 	 {font-weight: 200;}
+.regular {font-weight: 300;}
+.normal  {font-weight: 400;}
+.bold 	 {font-weight: 700;}
+.boldest {font-weight: 900;}
+
+.italic {font-style: italic;}
+.under {text-decoration: underline;}
+
+.upper		{text-transform: uppercase;}
+.lower		{text-transform: lowercase;}
+//.capital	{text-transform: capitalize;}
+
+.upper-first:first-letter {
+	@extend .upper;
+}
+
+.ws-normal {white-space: normal;}
+.ws-nowrap {white-space: nowrap;}
+
+.o-hidden	{overflow: hidden;}
+.o-visible	{overflow: visible;}
+.o-auto		{overflow: auto;}
+
+.no-list     {list-style-type: none;}
+.square-list {list-style-type: square;}
+
+.inside-list {list-style-position: inside;}
+
+.bg-cover   {background-size: cover;}
+.bg-contain {background-size: contain;}
+
+.bg-no-repeat {background-repeat: no-repeat;}
+.bg-repeat-x {background-repeat: repeat-x;}
+.bg-repeat-y {background-repeat: repeat-y;}
+
+.bg-top		{background-position: top;}
+.bg-center	{background-position: center;}
+.bg-bottom	{background-position: bottom;}
+.bg-left	{background-position: left;}
+.bg-right	{background-position: right;}
+
+.bg-100pc-auto {background-size: 100% auto;}
+
+.table-fixed {table-layout: fixed;}
+
+.counter-start {counter-reset: Q;}
+.counter-get:before , .counter-get-after:after {
+	content: counter(Q);
+	counter-increment: Q;
+}
+
+.circled {border-radius: 100%;}
+.rounded {border-radius: #{$design-width}rem;}
+
+/************************************************************************************************/
+
+@for $i from 1 through 35 {
+	.rounded-#{$i} {border-radius: #{$i}rem;}
+}
+@for $i from 8 through 20 {.rounded-#{$i*5} {border-radius:#{$i*5}rem}}
+
+
+/************************************************************************************************/
+
+.m-a-auto {margin: auto;}
+@for $i from 0 through 9 {.m-a-#{$i} {margin:#{$i}rem}}
+@for $i from 2 through 52 {.m-a-#{$i*5} {margin:#{$i*5}rem}}
+@for $i from 0 through 9 {.m-t-#{$i} {margin-top:#{$i}rem}}
+@for $i from 2 through 52 {.m-t-#{$i*5} {margin-top:#{$i*5}rem}}
+@for $i from 0 through 9 {.m-b-#{$i} {margin-bottom:#{$i}rem}}
+@for $i from 2 through 52 {.m-b-#{$i*5} {margin-bottom:#{$i*5}rem}}
+@for $i from 0 through 9 {.m-r-#{$i} {margin-right:#{$i}rem}}
+@for $i from 2 through 52 {.m-r-#{$i*5} {margin-right:#{$i*5}rem}}
+@for $i from 0 through 9 {.m-l-#{$i} {margin-left:#{$i}rem}}
+@for $i from 2 through 52 {.m-l-#{$i*5} {margin-left:#{$i*5}rem}}
+
+@for $i from 0 through 9 {.p-a-#{$i} {padding:#{$i}rem}}
+@for $i from 2 through 52 {.p-a-#{$i*5} {padding:#{$i*5}rem}}
+@for $i from 0 through 9 {.p-t-#{$i} {padding-top:#{$i}rem}}
+@for $i from 2 through 52 {.p-t-#{$i*5} {padding-top:#{$i*5}rem}}
+@for $i from 0 through 9 {.p-b-#{$i} {padding-bottom:#{$i}rem}}
+@for $i from 2 through 52 {.p-b-#{$i*5} {padding-bottom:#{$i*5}rem}}
+@for $i from 0 through 9 {.p-r-#{$i} {padding-right:#{$i}rem}}
+@for $i from 2 through 52 {.p-r-#{$i*5} {padding-right:#{$i*5}rem}}
+@for $i from 0 through 9 {.p-l-#{$i} {padding-left:#{$i}rem}}
+@for $i from 2 through 52 {.p-l-#{$i*5} {padding-left:#{$i*5}rem}}
+
+@for $i from 0 through 9 {.w-#{$i} {width:#{$i}rem}}
+@for $i from 2 through $design-width/5 {.w-#{$i*5} {width:#{$i*5}rem}}
+@for $i from 1 through 20 {.w-#{$i*5}-pc {width:#{percentage($i*5/100)}}}
+@for $i from 0 through 9 {.h-#{$i} {height:#{$i}rem}}
+@for $i from 2 through $design-width/5 {.h-#{$i*5} {height:#{$i*5}rem}}
+@for $i from 1 through 20 {.h-#{$i*5}-pc {height:#{percentage($i*5/100)}}}
+
+@for $i from 6 through 400 {.f-#{$i} {font-size:#{$i}rem}}
+.l-h-1 , .lh-100-pc {line-height: 1;}												//transitional
+@for $i from 6 through 400 {.lh-#{$i} {line-height:#{$i}rem}}
+
+.brd-a-0 {border: 0 none;}
+@for $i from 1 through 9 {.brd-a-#{$i} {border:#{$i}rem solid transparent}}
+@for $i from 2 through 52 {.brd-a-#{$i*5} {border:#{$i*5}rem solid transparent}}
+
+.brd-t-0 {border-top: 0 none;}
+@for $i from 1 through 9 {.brd-t-#{$i} {border-top:#{$i}rem solid transparent}}
+@for $i from 2 through 52 {.brd-t-#{$i*5} {border-top:#{$i*5}rem solid transparent}}
+
+.brd-b-0 {border-bottom: 0 none;}
+@for $i from 1 through 9 {.brd-b-#{$i} {border-bottom:#{$i}rem solid transparent}}
+@for $i from 2 through 52 {.brd-b-#{$i*5} {border-bottom:#{$i*5}rem solid transparent}}
+
+.brd-r-0 {border-right: 0 none;}
+@for $i from 1 through 9 {.brd-r-#{$i} {border-right:#{$i}rem solid transparent}}
+@for $i from 2 through 52 {.brd-r-#{$i*5} {border-right:#{$i*5}rem solid transparent}}
+
+.brd-l-0 {border-left: 0 none;}
+@for $i from 1 through 9 {.brd-l-#{$i} {border-left:#{$i}rem solid transparent}}
+@for $i from 2 through 52 {.brd-l-#{$i*5} {border-left:#{$i*5}rem solid transparent}}
+
+.ol-0 {outline: none;}
+@for $i from 1 through 9 {.ol-#{$i} {outline:#{$i}rem solid transparent}}
+@for $i from 2 through 52 {.ol-#{$i*5} {outline:#{$i*5}rem solid transparent}}
+
+/************************************************************************************************/
+
+@for $i from 1 through 10 {
+	.trans-#{$i*100} {
+		@include transition(all,#{$i/10}s);
+	}
+}
+
+/************************************************************************************************/
+
+@for $i from 0 through 10 {
+	.opac-#{$i*10} {
+		opacity: #{0.1 * $i};
+	}
+}
+
+/************************************************************************************************/
+
+@for $i from 1 through 10 {
+	.hover-anim-down-#{$i*5}:hover {
+		@include transform("translateY(#{$i*5}rem)");
+	}
+}
+@for $i from 1 through 10 {
+	.hover-anim-up-#{$i*5}:hover {
+		@include transform("translateY(#{-$i*5}rem)");
+	}
+}
+@for $i from 1 through 10 {
+	.hover-anim-left-#{$i*5}:hover {
+		@include transform("translateX(#{-$i*5}rem)");
+	}
+}
+@for $i from 1 through 10 {
+	.hover-anim-right-#{$i*5}:hover {
+		@include transform("translateX(#{$i*5}rem)");
+	}
+}

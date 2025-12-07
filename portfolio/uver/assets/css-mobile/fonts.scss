@@ -1,0 +1,69 @@
+@mixin font-face($name,$fsname,$weight) {
+	@font-face {
+		font-family: #{$name};
+		font-weight: #{$weight};
+		src: url('/assets/fonts/#{$fsname}.eot');
+		src: url('/assets/fonts/#{$fsname}.woff') format('woff'), url('/assets/fonts/#{$fsname}.ttf') format('truetype'), url('/assets/fonts/#{$fsname}.svg') format('svg');
+	}
+}
+@mixin font-face-style($name,$fsname,$weight,$style) {
+	@font-face {
+		font-family: #{$name};
+		font-weight: #{$weight};
+		font-style: #{$style};
+		src: url('/assets/fonts/#{$fsname}.eot');
+		src: url('/assets/fonts/#{$fsname}.woff') format('woff'), url('/assets/fonts/#{$fsname}.ttf') format('truetype'), url('/assets/fonts/#{$fsname}.svg') format('svg');
+	}
+}
+@mixin font-face-local($name,$fsname,$weight,$localname) {
+	@font-face {
+		font-family: #{$name};
+		font-weight: #{$weight};
+		src: url('/assets/fonts/#{$fsname}.eot');
+		src: local('#{$localname}'), url('/assets/fonts/#{$fsname}.woff') format('woff'), url('/assets/fonts/#{$fsname}.ttf') format('truetype'), url('/assets/fonts/#{$fsname}.svg') format('svg');
+	}
+}
+@mixin font-face-local-style($name,$fsname,$weight,$localname,$style) {
+	@font-face {
+		font-family: #{$name};
+		font-weight: #{$weight};
+		font-style: #{$style};
+		src: url('/assets/fonts/#{$fsname}.eot');
+		src: local('#{$localname}'), url('/assets/fonts/#{$fsname}.woff') format('woff'), url('/assets/fonts/#{$fsname}.ttf') format('truetype'), url('/assets/fonts/#{$fsname}.svg') format('svg');
+	}
+}
+@mixin font-class($name,$class) {
+	.#{$class} {
+		font-family: #{$name},helvetica,sans-serif;
+	}
+}
+@mixin font-class-icon($name,$class) {
+	.#{$class} , .#{$class}-before:before , .#{$class}-after:after {
+		font-family: #{$name},sans-serif;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+@include font-face(DinPRO,dinpro-light,100);
+@include font-face(DinPRO,dinpro-regular,300);
+@include font-face(DinPRO,dinpro-medium,400);
+@include font-face(DinPRO,dinpro-bold,700);
+@include font-face(DinPRO,dinpro-black,900);
+
+@include font-class(DinPRO,dinpro);
+
+
+@include font-face(Icon,uver-icon,400);
+
+@include font-class-icon(Icon,icon);
+
+body {
+	@extend .dinpro;
+	line-height: 1.2;
+}

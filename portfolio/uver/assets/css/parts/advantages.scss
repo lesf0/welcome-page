@@ -1,0 +1,140 @@
+@import '../defs/config';
+@import '../defs/mixins';
+
+/************************************************************************************************/
+
+$advantages: 
+	(545,	45,		-310,	100)
+	(505,	225,	-200,	35)
+	(15,	190,	245,	110)
+	(600,	415,	-300,	-55)
+	(-20,	443,	300,	-50);
+
+.advantages-entry {
+	.advantages-container-folded & {
+		color: transparent;
+
+		.icon {
+			color: transparent;
+			@include transform(scale(0));
+		}
+	}
+
+	.icon {
+		@include transition-raw(inherit);
+	}
+
+	&:before , &:after {
+		content: '';
+		display: block;
+		position: absolute;
+
+		.advantages-container-folded & {
+			opacity: 0;
+		}
+	}
+	&:before {
+		border-color: inherit;
+		border-style: solid;
+		border-width: 0;
+		z-index: -1;
+	}
+	&:after {
+		left: 50%;
+		top: 50%;
+		width: 11rem;
+		height: 11rem;
+		margin: -7.5rem -7.5rem;
+		background: #fff;
+		border: 2rem solid;
+		border-color: inherit;
+		border-radius: inherit;
+		box-shadow: 0 0 16rem 0 #ee271f;
+	}
+
+	@for $i from 1 through length($advantages) {
+		$a: nth($advantages, $i);
+		$l: nth($a, 1);
+		$t: nth($a, 2);
+		$w: nth($a, 3);
+		$h: nth($a, 4);
+
+		&:nth-child(#{$i}) {
+			left: #{$l}rem;
+			top: #{$t}rem;
+
+			clip: rect(#{- $design-width }rem, #{$w + (7.5 + 16) + 30 + $content-width / 2}rem, #{$design-width}rem, #{$w - 7.5 + 30 - $content-width / 2}rem);
+
+			-webkit-transition: color .3s #{0.2 + $i / 10}s,	-webkit-transform .3s #{0.2 + $i / 10}s, clip .7s #{$i / 10}s;
+			   -moz-transition: color .3s #{0.2 + $i / 10}s,	   -moz-transform .3s #{0.2 + $i / 10}s, clip .7s #{$i / 10}s;
+				-ms-transition: color .3s #{0.2 + $i / 10}s,		-ms-transform .3s #{0.2 + $i / 10}s, clip .7s #{$i / 10}s;
+				 -o-transition: color .3s #{0.2 + $i / 10}s,		 -o-transform .3s #{0.2 + $i / 10}s, clip .7s #{$i / 10}s;
+					transition: color .3s #{0.2 + $i / 10}s,			transform .3s #{0.2 + $i / 10}s, clip .7s #{$i / 10}s;
+
+			.advantages-container-folded & {
+				clip: rect(#{- $design-width }rem, #{$w + 7.5 + 30}rem, #{$design-width}rem, #{$w - 7.5 + 30}rem);
+
+				-webkit-transition: color .3s,	-webkit-transform .3s, clip .7s;
+				   -moz-transition: color .3s,	   -moz-transform .3s, clip .7s;
+					-ms-transition: color .3s,		-ms-transform .3s, clip .7s;
+					 -o-transition: color .3s,		 -o-transform .3s, clip .7s;
+						transition: color .3s,			transform .3s, clip .7s;
+			}
+
+			&:before , &:after {
+				@include transition-raw(all .3s #{$i / 10}s);
+
+				.advantages-container-folded & {
+					@include transition-raw(all .3s .4s);
+				}
+			}
+
+			&:after {
+				@include transform(translate(#{$w}rem, #{$h}rem));
+			}
+
+			&:before {
+				@if $w < 0 {
+					right: 50%;
+					border-left-width: 2rem;
+
+					@if $h < 0 {
+						width: #{-$w + $h}rem;
+						@include transform-origin(left bottom);
+					} @else {
+						width: #{-$w - $h}rem;
+						@include transform-origin(left top);
+					}
+
+				} @else {
+					left: 50%;
+					border-right-width: 2rem;
+
+					@if $h < 0 {
+						width: #{$w + $h}rem;
+						@include transform-origin(right bottom);
+					} @else {
+						width: #{$w - $h}rem;
+						@include transform-origin(right top);
+					}
+				}
+
+				@if $h < 0 {
+					bottom: 50%;
+					border-bottom-width: 2rem;
+					height: #{-$h}rem;
+				} @else {
+					top: 50%;
+					border-top-width: 2rem;
+					height: #{$h}rem;
+				}
+
+				@if $w * $h < 0 {
+					@include transform(skewX(-45deg));
+				} @else {
+					@include transform(skewX(45deg));
+				}
+			}
+		}
+	}
+}

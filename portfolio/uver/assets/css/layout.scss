@@ -1,0 +1,72 @@
+@import 'defs/config';
+@import 'defs/mixins';
+
+/************************************************************************************************/
+
+html {
+	font-size: 1px;
+	font-size: #{100/($design-width+$scrollbar-width)}vw;
+	font-size: calc(100vw / #{$design-width+$scrollbar-width});
+}
+@include media-mid {
+	html {font-size: 1px;}
+}
+@include media-small {
+	html {
+		font-size: #{100/($content-width+$scrollbar-width+$content-margin)}vw;
+		font-size: calc(100vw / #{$content-width+$scrollbar-width+$content-margin});
+	}
+}
+@include media-minimum {
+	html {
+		font-size: #{$content-width-min/($content-width+$scrollbar-width+$content-margin)}px;
+		font-size: calc(#{$content-width-min}px / #{($content-width+$scrollbar-width+$content-margin)});
+	}
+}
+
+body {
+	font-size: 16rem;
+}
+
+/************************************************************************************************/
+
+.body {
+	min-width: #{$content-width}rem;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.body:before {
+	content: '';
+	width: 50%;
+	height: 9%; /*any number, but not 100% or 0*/
+	display: inline-block;
+	visibility: hidden;
+}
+.wrapper {
+	width: #{$design-width}rem;
+	position: relative;
+	display: inline-block;
+	left: -#{$design-width/2}rem;
+
+	white-space: normal;
+	vertical-align: top;
+	overflow: hidden;
+}
+.block {
+	height: auto;
+	position: relative;
+}
+.content {
+	width: #{$content-width}rem;
+	margin: auto;
+	position: relative;
+}
+.content_winsize {
+	min-width: #{$content-width}rem;
+	max-width: #{$design-width}rem;
+	width: 100vw;
+	width: calc(100vw - #{$scrollbar-width}px);
+	margin: auto;
+	position: relative;
+}

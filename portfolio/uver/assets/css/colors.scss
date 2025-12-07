@@ -1,0 +1,50 @@
+@mixin color($code,$name){
+	.c#{$name} {color: #{$code}}
+	.bg#{$name} {background-color: #{$code}}
+	.brd#{$name} {border-color: #{$code}}
+	.ol#{$name} {outline-color: #{$code}}
+
+	.ch#{$name}:hover {color: #{$code}}
+	.bgh#{$name}:hover {background-color: #{$code}}
+	.brdh#{$name}:hover {border-color: #{$code}}
+	.olh#{$name}:hover {outline-color: #{$code}}
+}
+@mixin gray($code){
+	@include color(to-lower-case("#"+$code+$code+$code),$code);
+}
+
+@include gray("0");
+@include gray("F");
+
+@include gray("14");
+@include gray("18");
+@include gray("20");
+@include gray("25");
+@include gray("33");
+@include gray("9A");
+@include gray("A2");
+@include gray("A9");
+@include gray("EB");
+@include gray("DC");
+@include gray("EF");
+@include gray("F3");
+
+@include color(#ee271f,"Red");
+@include color(#ef443d,"BloodRed");
+
+@include color(#51750b,"Green");
+
+@include color(#ff095a,"Milan");
+
+@include color(transparent,"Trans");
+
+@for $i from 1 through 19 {
+	@include color("rgba(0,0,0,#{$i/20})","0-#{$i*5}-pc");
+}
+@for $i from 1 through 19 {
+	@include color("rgba(255,255,255,#{$i/20})","F-#{$i*5}-pc");
+}
+
+body {
+	@extend .c33,.bgEF;
+}
